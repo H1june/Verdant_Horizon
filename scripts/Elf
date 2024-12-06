@@ -26,6 +26,9 @@ public class Elf : MonoBehaviour
     public int maxHp = 100;
     public int nowHp = 100;
     public int atkDmg = 15;
+    public int aviltyPower = 15;
+    public int maxExp = 50;
+    public int nowExp = 0;
     public float atkSpeed = 1.0f;
     public float moveSpeed = 5.0f;
     public float jumpPower = 15.0f;
@@ -110,6 +113,18 @@ public class Elf : MonoBehaviour
     {
         // 체력 바 업데이트
         nowHpbar.fillAmount = (float)nowHp / (float)maxHp;
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("최대 HP : " + maxHp);
+            Debug.Log("현재 HP : " + nowHp);
+            Debug.Log("냉철 : " + atkDmg); //AD
+            Debug.Log("친화 : " + aviltyPower); // a
+            Debug.Log("공격 속도 : " + atkSpeed);
+            Debug.Log("이동 속도 : " + moveSpeed);
+            Debug.Log("최대 경험치 : " + maxExp);
+            Debug.Log("현재 경험치 : " + nowExp);
+        }
 
         if (canControl && !isSit)
         {
